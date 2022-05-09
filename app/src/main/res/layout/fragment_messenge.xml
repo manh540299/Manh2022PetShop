@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/lv_messenge"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_above="@id/layout_bottom"/>
+       <RelativeLayout
+           android:layout_marginBottom="10dp"
+           android:id="@+id/layout_bottom"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true">
+       <EditText
+           android:layout_centerVertical="true"
+           android:layout_marginRight="10dp"
+           android:layout_toStartOf="@id/btnsend"
+           android:id="@+id/edtmessenge"
+           android:hint="Enter messenge"
+           android:padding="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:inputType="textPersonName"/>
+
+       <Button
+           android:id="@+id/btnsend"
+           android:layout_marginRight="10dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:backgroundTint="@color/blue"
+           android:text="SEND" />
+       </RelativeLayout>
+   </RelativeLayout>
+</layout>

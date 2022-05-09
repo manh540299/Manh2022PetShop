@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ImageView
+        android:id="@+id/imgproduct"
+        android:layout_marginTop="10dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/imgproduct" />
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/imgproduct"
+        android:layout_below="@+id/tvname">
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:text="-"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="#F44336"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:text="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <TextView
+            android:background="#F44336"
+            android:textColor="@color/white"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:text="+"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+       <TextView
+           android:layout_width="120dp"
+           android:layout_height="60dp"
+           android:id="@+id/price"
+           android:gravity="center"
+           android:layout_alignParentRight="true"/>
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/price"
+        android:gravity="center"/>
+</RelativeLayout>
