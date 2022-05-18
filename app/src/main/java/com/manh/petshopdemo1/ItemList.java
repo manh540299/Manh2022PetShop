@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.manh.petshopdemo1.adapter.ItemSearchAdapter;
-import com.manh.petshopdemo1.api.ApiService;
+import com.manh.petshopdemo1.interf.ApiService;
 import com.manh.petshopdemo1.model.Product;
 
 import java.util.ArrayList;
@@ -78,25 +78,25 @@ public class ItemList extends AppCompatActivity {
                 }
                 switch (id) {
                     case 1:
-                        adapter = new ItemSearchAdapter(food_item);
+                        adapter = new ItemSearchAdapter(food_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     case 3:
-                        adapter = new ItemSearchAdapter(health_item);
+                        adapter = new ItemSearchAdapter(health_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     case 4:
-                        adapter = new ItemSearchAdapter(accessories_item);
+                        adapter = new ItemSearchAdapter(accessories_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     case 5:
-                        adapter = new ItemSearchAdapter(shower_gel_item);
+                        adapter = new ItemSearchAdapter(shower_gel_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);

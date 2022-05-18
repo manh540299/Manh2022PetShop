@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="120dp"
-    android:layout_height="150dp"
-    android:background="@drawable/bgr_lv_product_home"
-    android:layout_marginLeft="10dp"
+<androidx.cardview.widget.CardView android:layout_width="140dp"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="5dp"
+    app:cardCornerRadius="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout android:layout_width="140dp"
+    android:layout_height="180dp">
     <ImageView
         android:layout_marginTop="5dp"
         android:layout_width="85dp"
@@ -14,14 +17,36 @@
 
     <TextView
         android:id="@+id/tvname"
-        android:layout_width="90dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="bottom"
         android:layout_marginTop="5dp"
-        android:paddingLeft="10dp"
-        android:textSize="12sp"
+        android:ellipsize="end"
         android:maxLines="2"
-        />
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="14sp" />
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="7dp"
+        android:textSize="10sp"
+        android:textColor="#999999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvname"
+        android:id="@+id/tvprice"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="7dp"
+        android:textSize="14sp"
+        android:textColor="@color/red_color"
+        android:layout_toEndOf="@+id/tvprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvname"
+        android:id="@+id/tvsale"/>
+
 </RelativeLayout>
+</androidx.cardview.widget.CardView>

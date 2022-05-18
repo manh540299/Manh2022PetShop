@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.manh.petshopdemo1">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,6 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetShopDemo1">
         <activity
+            android:name=".ActivityInfomation"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Flash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".ItemList"
             android:exported="false" />
         <activity
@@ -22,20 +44,14 @@
             android:name=".SearchViewActivity"
             android:exported="false" />
         <activity
-            android:name=".Detail_Product"
+            android:name=".DetailProduct"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

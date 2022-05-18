@@ -10,6 +10,7 @@
         android:orientation="horizontal"
         android:layout_marginBottom="10dp">
     <EditText
+        android:imeOptions="actionGo"
         android:layout_gravity="center_horizontal"
         android:id="@+id/edtsearch"
         android:layout_width="0dp"
@@ -44,7 +45,7 @@
         android:textStyle="bold"
         android:textSize="14sp"
         android:gravity="center_horizontal"
-        android:id="@+id/tvsetting_show_history_search"
+        android:id="@+id/tvsetting_delete_history_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Xóa Lịch Sử Tìm kiếm"/>

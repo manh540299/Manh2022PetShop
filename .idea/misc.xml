@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/backgr_top_home_fragment.xml" value="0.11510416666666666" />
+        <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgr_add_to_cart.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgr_edt_searchview.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgr_image_menu.xml" value="0.18796296296296297" />
+        <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgr_item_size.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgr_lv_product_home.xml" value="0.19583333333333333" />
+        <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/bgrquantity_item.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/border_button_cart.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/border_messenge.xml" value="0.19583333333333333" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/drawable/border_search.xml" value="0.18518518518518517" />
@@ -28,9 +31,29 @@
         <entry key="..\:/PetShopDemo1/app/src/main/res/layout/lv_messenge_fragment.xml" value="0.1796875" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/layout/lv_product_home.xml" value="0.1796875" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/layout/lv_search.xml" value="0.1796875" />
+        <entry key="..\:/PetShopDemo1/app/src/main/res/layout/lvsize.xml" value="0.1796875" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/layout/notification_fragment.xml" value="0.165625" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/layout/searchview.xml" value="0.1796875" />
         <entry key="..\:/PetShopDemo1/app/src/main/res/menu/bot_nav.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/drawable/bgr_btn_signup_profile.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/drawable/bgredtlogin.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_detail_product.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_flash.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_infomation.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_item_search_view.xml" value="0.1640625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_login.xml" value="0.13999999999999999" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_profile_fragment.xml" value="0.1640625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_reset_password.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_search_view.xml" value="0.115625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_sign_up.xml" value="0.115625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/activity_update_account.xml" value="0.1796875" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/lv_cart_product.xml" value="0.115625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/lv_product_home.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/layout/lv_search.xml" value="0.1640625" />
+        <entry key="..\:/Users/DELL/PetShopDemo1/app/src/main/res/menu/bot_nav.xml" value="0.1796875" />
       </map>
     </option>
   </component>

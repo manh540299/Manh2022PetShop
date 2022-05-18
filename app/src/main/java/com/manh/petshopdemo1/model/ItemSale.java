@@ -1,23 +1,18 @@
 package com.manh.petshopdemo1.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
-
-public class Product implements Serializable {
+public class ItemSale {
     private int id;
     private String name;
     private String image;
     private long price;
-    private int group;
+    private long sale;
 
-    public Product(int id, String name, String image, long price, int group) {
+    public ItemSale(int id, String name, String image, long price, long sale) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
-        this.group = group;
+        this.sale = sale;
     }
 
     public int getId() {
@@ -52,11 +47,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getGroup() {
-        return group;
+    public long getSale() {
+        return sale;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
+    public void setSale(long sale) {
+        this.sale = sale;
     }
 }

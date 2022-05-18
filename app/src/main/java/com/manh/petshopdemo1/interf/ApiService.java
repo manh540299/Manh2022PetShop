@@ -1,6 +1,8 @@
-package com.manh.petshopdemo1.api;
+package com.manh.petshopdemo1.interf;
 
+import com.manh.petshopdemo1.model.ItemSale;
 import com.manh.petshopdemo1.model.Product;
+import com.manh.petshopdemo1.model.SizeItem;
 
 import java.util.List;
 
@@ -16,4 +18,8 @@ public interface ApiService {
             .addConverterFactory(GsonConverterFactory.create()).build().create(ApiService.class);
     @GET("m_petshop_product")
     Call<List<Product>> getProduct();
+    @GET("m050499detailPet_shop_detail")
+    Call<List<SizeItem>> getSizeItem();
+    @GET("m050499Sale")
+    Call<List<ItemSale>> getItemSale();
 }

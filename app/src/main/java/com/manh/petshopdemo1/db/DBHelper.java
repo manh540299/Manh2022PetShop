@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.manh.petshopdemo1.DetailProduct;
+
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -16,6 +19,15 @@ public class DBHelper extends SQLiteOpenHelper {
                 "search_history NTEXT" +
                 ")";
         sqLiteDatabase.execSQL(createTable);
+        String createTableCart="CREATE TABLE IF NOT EXISTS cart(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "name NTEXT," +
+                "image TEXT,"+
+                "quantity INT," +
+                "size NTEXT," +
+                "price INT" +
+                ")";
+        sqLiteDatabase.execSQL(createTableCart);
     }
 
     @Override

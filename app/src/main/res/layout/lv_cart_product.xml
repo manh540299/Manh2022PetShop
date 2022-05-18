@@ -1,65 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="140dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+<com.chauthai.swipereveallayout.SwipeRevealLayout android:layout_width="match_parent"
+    android:layout_height="145dp"
+    android:id="@+id/swipraveallayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    app:mode="same_level"
+    app:dragEdge="right"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:id="@+id/lldelete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@color/red_color"
+            android:text="Delete"/>
+    </LinearLayout>
+<RelativeLayout android:id="@+id/rlitem_cart"
+    android:layout_width="match_parent"
+    android:layout_height="145dp">
+    <CheckBox
+        android:layout_centerVertical="true"
+        android:id="@+id/cbselcet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <ImageView
+        android:layout_toRightOf="@id/cbselcet"
         android:id="@+id/imgproduct"
-        android:layout_marginTop="10dp"
-        android:layout_width="120dp"
-        android:layout_height="120dp"/>
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp" />
 
     <TextView
-        android:id="@+id/tvname"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_toRightOf="@+id/imgproduct" />
-    <LinearLayout
-        android:layout_marginLeft="5dp"
-        android:orientation="horizontal"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:id="@+id/tv_cart_item_name"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/imgproduct"
-        android:layout_below="@+id/tvname">
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:textSize="15sp" />
+
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        android:text="-"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:background="#F44336"
-        android:textColor="@color/white"
-        android:gravity="center"/>
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_cart_item_size"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_cart_item_name"
+        android:layout_toRightOf="@id/imgproduct"
+        android:paddingLeft="5dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/imgproduct"
+        android:orientation="horizontal">
+
         <TextView
-            android:textColor="@color/black"
+            android:id="@+id/tv_cart_item_subtraction"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
+            android:background="@drawable/bgrquantity_item"
+            android:gravity="center"
+            android:text="-"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_cart_item_quantity"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
             android:text="1"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textStyle="bold" />
+
         <TextView
-            android:background="#F44336"
-            android:textColor="@color/white"
+            android:id="@+id/tv_cart_item_summation"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
+            android:background="@drawable/bgrquantity_item"
+            android:gravity="center"
             android:text="+"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textColor="@color/black"
+            android:textStyle="bold" />
     </LinearLayout>
-       <TextView
-           android:layout_width="120dp"
-           android:layout_height="60dp"
-           android:id="@+id/price"
-           android:gravity="center"
-           android:layout_alignParentRight="true"/>
+
     <TextView
-        android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:id="@+id/tvprice"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/tvtotal"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/price"
-        android:gravity="center"/>
+        android:layout_marginTop="5dp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvtotal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center" />
 </RelativeLayout>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

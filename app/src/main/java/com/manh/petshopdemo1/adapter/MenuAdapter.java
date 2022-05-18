@@ -65,4 +65,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.viewholder> {
             img = itemView.findViewById(R.id.imgimage);
         }
     }
+    public void release(){
+        context=null;
+    }
 }
