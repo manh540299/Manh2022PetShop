@@ -41,7 +41,6 @@ public class Messenge_Fagment extends Fragment {
                if(TextUtils.isEmpty(mess))
                    return;
                messengeList.add(new Messenge(mess));
-               adapter.notifyDataSetChanged();
                binding.lvMessenge.scrollToPosition(messengeList.size()-1);
                binding.edtmessenge.setText("");
            }

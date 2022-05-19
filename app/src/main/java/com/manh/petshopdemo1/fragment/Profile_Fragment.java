@@ -109,7 +109,6 @@ public class Profile_Fragment extends Fragment {
                 if (user == null) {
                     Intent intent = new Intent(getActivity(), Login.class);
                     startActivity(intent);
-                    getActivity().finishAffinity();
                 } else {
                     Intent intent = new Intent(getActivity(), UpdateAccount.class);
                     startActivity(intent);
@@ -124,7 +123,6 @@ public class Profile_Fragment extends Fragment {
                 } else {
                     Intent intent = new Intent(getActivity(), Login.class);
                     startActivity(intent);
-                    getActivity().finishAffinity();
                 }
             }
         });

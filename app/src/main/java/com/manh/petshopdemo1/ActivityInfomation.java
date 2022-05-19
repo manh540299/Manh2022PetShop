@@ -35,8 +35,16 @@ public class ActivityInfomation extends AppCompatActivity {
         btnconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ActivityInfomation.this,"Order success",Toast.LENGTH_SHORT).show();
-                finish();
+                String name=edtname.getText().toString();
+                String phone=edtname.getText().toString();
+                String address=edtname.getText().toString();
+                if(!name.isEmpty()&&!phone.isEmpty()&&!address.isEmpty()) {
+                    Toast.makeText(ActivityInfomation.this, "Order success", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else{
+                    Toast.makeText(ActivityInfomation.this, "Please fill in the missing information", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

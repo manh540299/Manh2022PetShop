@@ -75,7 +75,7 @@ public class Cart_Fagment extends Fragment {
             }
         }, getActivity());
         binding.lvproductCart.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+       // adapter.notifyDataSetChanged();
         binding.lvproductCart.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         binding.lvproductCart.addItemDecoration(itemDecoration);

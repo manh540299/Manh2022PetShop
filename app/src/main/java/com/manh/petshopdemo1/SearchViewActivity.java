@@ -56,7 +56,7 @@ public class SearchViewActivity extends AppCompatActivity {
         }
         list_search_adapter = new ArrayAdapter<String>(this, R.layout.lv_search, search_history);
         lv_search_history.setAdapter(list_search_adapter);
-        list_search_adapter.notifyDataSetChanged();
+       // list_search_adapter.notifyDataSetChanged();
     }
 
     private void deleteData() {

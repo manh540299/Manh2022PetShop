@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.manh.petshopdemo1.ItemList;
 import com.manh.petshopdemo1.R;
 import com.manh.petshopdemo1.SearchViewActivity;
 import com.manh.petshopdemo1.adapter.MenuAdapter;
@@ -53,6 +54,11 @@ public class Home_Fragment extends Fragment {
         runViewFliper();
         setMenuListProduct();
         callApiProduct();
+        initListener();
+        return view;
+    }
+
+    private void initListener() {
         binding.tvsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +67,6 @@ public class Home_Fragment extends Fragment {
             }
         });
 
-        return view;
     }
 
     private void runViewFliper() {
@@ -88,7 +93,6 @@ public class Home_Fragment extends Fragment {
         menuList.add(new Menu(4, R.drawable.shower_gel, "Shower gel"));
         menuList.add(new Menu(5, R.drawable.pettoy, "Toys"));
         menuList.add(new Menu(6, R.drawable.house, "Cage"));
-
     }
 
     private void callApiProduct() {
@@ -118,7 +122,6 @@ public class Home_Fragment extends Fragment {
                 }
                 adapter = new MenuAdapter(menuList, getActivity());
                 binding.menu.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
                 binding.menu.setLayoutManager(layoutManager);
             }

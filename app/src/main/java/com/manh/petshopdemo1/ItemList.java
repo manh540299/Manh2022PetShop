@@ -36,9 +36,7 @@ public class ItemList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
-        tvtitle=findViewById(R.id.tv_name_view);
-        imgback=findViewById(R.id.img_back);
-        rc_list_item=findViewById(R.id.lv_item);
+        initUI();
         Intent intent=getIntent();
         String title=intent.getStringExtra("itemview")+" Item";
         tvtitle.setText(title);
@@ -111,5 +109,11 @@ public class ItemList extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void initUI() {
+        tvtitle=findViewById(R.id.tv_name_view);
+        imgback=findViewById(R.id.img_back);
+        rc_list_item=findViewById(R.id.lv_item);
     }
 }
