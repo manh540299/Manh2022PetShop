@@ -41,7 +41,7 @@ public class ActivityInfomation extends AppCompatActivity {
         edtphone = findViewById(R.id.edtphone);
         edtaddress = findViewById(R.id.edtaddress);
         btnconfirm = findViewById(R.id.btnconfirm);
-        imgback = findViewById(R.id.imgback);
+        imgback = findViewById(R.id.imgbacki);
         String createTableOrder="CREATE TABLE IF NOT EXISTS orderr(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "gmail NTEXT," +
@@ -99,5 +99,6 @@ public class ActivityInfomation extends AppCompatActivity {
                 Toast.makeText(ActivityInfomation.this, "Please fill in the missing information", Toast.LENGTH_SHORT).show();
             }
         });
+        imgback.setOnClickListener(view -> finish());
     }
 }
