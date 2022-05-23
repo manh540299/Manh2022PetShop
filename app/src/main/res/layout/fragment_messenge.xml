@@ -16,24 +16,27 @@
            android:layout_alignParentBottom="true">
        <EditText
            android:layout_centerVertical="true"
-           android:layout_marginRight="10dp"
+           android:layout_marginEnd="10dp"
            android:layout_toStartOf="@id/btnsend"
            android:id="@+id/edtmessenge"
-           android:hint="Enter messenge"
+           android:hint="@string/messenge_fragment_edt_enter_mess"
            android:padding="10dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:inputType="textPersonName"/>
 
-       <Button
-           android:id="@+id/btnsend"
-           android:layout_marginRight="10dp"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_alignParentRight="true"
-           android:layout_centerVertical="true"
-           android:backgroundTint="@color/blue"
-           android:text="SEND" />
+           <Button
+               android:id="@+id/btnsend"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:layout_centerVertical="true"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:backgroundTint="@color/blue"
+               android:text="@string/messenge_fragment_btn_send" />
        </RelativeLayout>
    </RelativeLayout>
 </layout>

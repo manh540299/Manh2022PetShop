@@ -19,9 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Your Profile"
+            android:text="@string/update_account_title"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -46,7 +46,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/bgredtlogin"
-            android:hint="email"
+            android:hint="@string/update_account_email"
             android:gravity="center_vertical"
             android:maxLines="1"
             android:paddingStart="20dp" />
@@ -60,7 +60,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/bgredtlogin"
-            android:hint="username"
+            android:hint="@string/update_account_username"
             android:imeOptions="actionDone"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
@@ -75,6 +75,6 @@
             android:backgroundTint="@color/green"
             android:maxLines="1"
             android:paddingStart="20dp"
-            android:text="Update" />
+            android:text="@string/update_account_btn_update" />
     </LinearLayout>
 </LinearLayout>

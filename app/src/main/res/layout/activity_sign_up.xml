@@ -15,14 +15,15 @@
             android:layout_height="35dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_baseline_arrow_back_24" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
             android:layout_centerInParent="true"
-            android:textSize="18sp"
+            android:text="@string/sign_up_title"
             android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
     <LinearLayout
         android:gravity="center"
@@ -42,9 +43,9 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/bgredtlogin"
-            android:hint="Enter email"
+            android:hint="@string/sign_up_edt_gmail"
             android:imeOptions="actionDone"
-            android:paddingLeft="20dp" />
+            android:paddingStart="20dp" />
 
         <EditText
             android:inputType="textPassword"
@@ -58,7 +59,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
-            android:hint="Enter password" />
+            android:hint="@string/sign_up_edt_pass" />
         <EditText
             android:inputType="textPassword"
             android:id="@+id/edtconfirmpass"
@@ -71,7 +72,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
-            android:hint="Confirm password" />
+            android:hint="@string/sign_up_edt_confirm_pass" />
         <Button
             android:id="@+id/btnsignup"
             android:layout_width="match_parent"
@@ -79,8 +80,8 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:backgroundTint="@color/green"
-            android:layout_marginTop="10dp"
-            android:text="Sign Up"
+            android:layout_marginTop="15dp"
+            android:text="@string/sign_up_btn_sign_up"
             android:textStyle="bold"
             android:textColor="@color/white"/>
     </LinearLayout>

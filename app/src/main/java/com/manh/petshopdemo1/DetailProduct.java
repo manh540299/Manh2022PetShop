@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.manh.petshopdemo1.adapter.SizeItemAdapter;
 
 import com.manh.petshopdemo1.db.DBHelper;
@@ -73,12 +75,7 @@ public class DetailProduct extends AppCompatActivity {
         }else {
             binding.tvSale.setVisibility(View.GONE);
         }
-        binding.imgback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        binding.imgback.setOnClickListener(view -> finish());
         Picasso.get().load(image).resize(350, 350).into(binding.imageItem);
         setQuantity();
     }
@@ -95,12 +92,9 @@ public class DetailProduct extends AppCompatActivity {
                             binding.tvTypeTitle.setText(itemSize.getName()+" : ");
                             itemTypeList = itemSize.getType();
                             binding.tvTypeTitle01.setText(itemTypeList.get(0).getName());
-                            adapter = new SizeItemAdapter(itemTypeList, DetailProduct.this, new OnClickItemListener() {
-                                @Override
-                                public void onClickItem(TypeItem itemType) {
-                                    binding.tvTypeTitle01.setText(itemType.getName());
-                                    binding.tvPrice.setText(String.format("%,d", itemType.getPrice()) + "đ");
-                                }
+                            adapter = new SizeItemAdapter(itemTypeList, DetailProduct.this, itemType -> {
+                                binding.tvTypeTitle01.setText(itemType.getName());
+                                binding.tvPrice.setText(String.format("%,d", itemType.getPrice()) + "đ");
                             });
                             binding.lvtypeitem.setAdapter(adapter);
                             binding.lvtypeitem.setLayoutManager(new LinearLayoutManager(DetailProduct.this, RecyclerView.HORIZONTAL, false));
@@ -119,79 +113,73 @@ public class DetailProduct extends AppCompatActivity {
 
     public void setQuantity() {
          quantity = Integer.parseInt(binding.tvquantity.getText().toString());
-        binding.tvsummation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quantity += 1;
-                binding.tvquantity.setText(String.valueOf(quantity));
-            }
+        binding.tvsummation.setOnClickListener(view -> {
+            quantity += 1;
+            binding.tvquantity.setText(String.valueOf(quantity));
         });
 
-        binding.tvsubtraction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (quantity > 1) {
-                    quantity -= 1;
-                    binding.tvquantity.setText(String.valueOf(quantity));
-                }
+        binding.tvsubtraction.setOnClickListener(view -> {
+            if (quantity > 1) {
+                quantity -= 1;
+                binding.tvquantity.setText(String.valueOf(quantity));
             }
         });
     }
 
     public void addToCart() {
-        List<Cart> cartList=new ArrayList<>();
-        dbHelper=new DBHelper(DetailProduct.this,"petshop.db",null,1);
-        dbHelper.queryData("CREATE TABLE IF NOT EXISTS cart(" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                "name NTEXT," +
-                "image TEXT,"+
-                "quantity INT," +
-                "size NTEXT," +
-                "price INT" +
-                ")");
 
-        binding.tvAddToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            dbHelper = new DBHelper(DetailProduct.this, "petshop.db", null, 1);
+            dbHelper.queryData("CREATE TABLE IF NOT EXISTS cart(" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "name NTEXT," +
+                    "gmail TEXT," +
+                    "image TEXT," +
+                    "quantity INT," +
+                    "size NTEXT," +
+                    "price INT" +
+                    ")");
 
-                String price = binding.tvPrice.getText().toString();
-                String[] priceOld = price.split("đ");
-                String priceOld01 = priceOld[0];
-                String[] pcold = priceOld01.split(",");
-                String pcold01 = "";
-                for (int i = 0; i < pcold.length; i++) {
-                    pcold01 += pcold[i];
-                }
-                int priceI = Integer.parseInt(pcold01);
-                String name = binding.tvNameItem.getText().toString();
-                int quantityy = Integer.parseInt(binding.tvquantity.getText().toString());
-                String sizez = binding.tvTypeTitle01.getText().toString();
-                Cursor cursor = dbHelper.getData("SELECT * FROM cart");
-                boolean check=true;
-                if (cursor.getCount()>0) {
-                    cursor.moveToFirst();
-                    while (!cursor.isAfterLast()) {
-                        String nameC = cursor.getString(1);
-                        int quantityC = cursor.getInt(3);
-                        String sizeC=cursor.getString(4);
-                        long pricess=cursor.getInt(5);
+            binding.tvAddToCart.setOnClickListener(view -> {
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                if(user==null){
+                    Intent intent=new Intent(this,Login.class);
+                    intent.putExtra("detailk",true);
+                    startActivity(intent);
+                }else {
 
-                        if(nameC.equals(name)&&sizeC.equals(sizez)&&pricess==priceI||(nameC.equals(name)&&sizeC==""&&pricess==priceI)) {
-                            quantityy += quantityC;
-                            dbHelper.queryData("UPDATE cart SET quantity="+quantityy+" WHERE id="+cursor.getInt(0));
-                            check=false;
-                        }
-                        cursor.moveToNext();
+                    String price = binding.tvPrice.getText().toString();
+                    String[] priceOld = price.split("đ");
+                    String priceOld01 = priceOld[0];
+                    String[] pcold = priceOld01.split(",");
+                    String pcold01 = "";
+                    for (int i = 0; i < pcold.length; i++) {
+                        pcold01 += pcold[i];
                     }
+                    int priceI = Integer.parseInt(pcold01);
+                    String name = binding.tvNameItem.getText().toString();
+                    int quantityy = Integer.parseInt(binding.tvquantity.getText().toString());
+                    String sizez = binding.tvTypeTitle01.getText().toString();
+                    Cursor cursor = dbHelper.getData("SELECT * FROM cart");
+                    if (cursor.getCount() > 0) {
+                        cursor.moveToFirst();
+                        while (!cursor.isAfterLast()) {
+                            String nameC = cursor.getString(1);
+                            String gmailC = cursor.getString(2);
+                            int quantityC = cursor.getInt(4);
+                            String sizeC = cursor.getString(5);
+                            long pricess = cursor.getLong(6);
+                            if (nameC.equals(name)&&gmailC.equalsIgnoreCase(user.getEmail()) && sizeC.equals(sizez) && pricess == priceI || (nameC.equals(name) && sizeC == "" && pricess == priceI)&&gmailC.equalsIgnoreCase(user.getEmail())) {
+                                quantityy += quantityC;
+                                dbHelper.queryData("DELETE FROM cart WHERE id=" + cursor.getInt(0));
+                            }
+                            cursor.moveToNext();
+                        }
+                    }
+                    dbHelper.queryData("INSERT INTO cart(name,gmail,image,quantity,size,price) VALUES('" + name + "','" +user.getEmail()+"','"+ image + "'," + quantityy + ",'" + sizez + "'," + priceI + ")");
+                    intent01.putExtra("key", true);
+                    startActivity(intent01);
                 }
-                if(check==true){
-                    dbHelper.queryData("INSERT INTO cart(name,image,quantity,size,price) VALUES('"+name+"','"+image+"',"+quantityy+",'"+sizez+"',"+priceI+")");
-                }
-
-               intent01.putExtra("key",true);
-                 startActivity(intent01);
-            }
-        });
+            });
 
     }
 }

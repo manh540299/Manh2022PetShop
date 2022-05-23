@@ -5,26 +5,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginBottom="10dp">
+        android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/mainframe"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9" />
+            android:layout_weight="0.89" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/botnav"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"
+            android:layout_weight="0.11"
             android:background="@color/white"
             app:menu="@menu/bot_nav"
             app:itemIconTint="@color/bot_nav_color"
             app:itemTextColor="@color/bot_nav_color"
-            app:labelVisibilityMode="selected"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            app:labelVisibilityMode="selected" />
     </LinearLayout>
 </layout>

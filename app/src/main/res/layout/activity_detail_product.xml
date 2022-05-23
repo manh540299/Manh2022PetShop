@@ -23,135 +23,146 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
     </RelativeLayout>
-    <LinearLayout
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_above="@+id/rladdtocart"
-        android:layout_below="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    <ImageView
-        android:id="@+id/image_item"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"/>
-    <TextView
-        android:textStyle="bold"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textSize="16sp"
-        android:maxLines="2"
-        android:layout_marginTop="10dp"
-        android:id="@+id/tv_name_item"
-        android:layout_width="410dp"
-        android:paddingBottom="5dp"
-        android:ellipsize="end"
-        android:layout_height="60dp"/>
-    <RelativeLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_below="@+id/title">
 
-        <TextView
-            android:id="@+id/tv_price"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/red_color"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_sale"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_below="@id/tv_price"
-            android:layout_marginStart="10dp"
-            android:textColor="#B3B3B3"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/tvsummation"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/bgrquantity_item"
-            android:gravity="center"
-            android:text="+"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvquantity"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="2dp"
-            android:layout_toLeftOf="@id/tvsummation"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvsubtraction"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="2dp"
-            android:layout_toLeftOf="@id/tvquantity"
-            android:background="@drawable/bgrquantity_item"
-            android:gravity="center"
-            android:text="-"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_below="@id/tv_type_title"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/lvtypeitem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ScrollView
-            android:layout_marginTop="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    <TextView
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Trọng lượng: 1kg\nXuất xứ: Thái Lan\n- Smart Heart Gold Puppy là thức ăn khô cho chó nhỏ với chất lượng được đảm bảo.\n- Với các chú chó nhỏ, bạn cần cung cấp cho chúng một chế độ dinh dưỡng đầy đủ các chất để đáp ứng nhu cầu duy trì và phục hồi các mô cơ trong cơ thể của chúng\n.- Là đồ ăn cho chó  có chất lượng tốt, chứa dầu cá, DHA, Axit béo O-mega 3, giàu Colin...giúp phát triển trí não và tăng cường sức khỏe cho tim mạch."/>
-        </ScrollView>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tv_type_title"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_toRightOf="@id/tv_type_title"
-            android:id="@+id/tv_type_title_01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-    </RelativeLayout>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/image_item"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="100dp" />
+
+            <TextView
+                android:id="@+id/tv_name_item"
+                android:layout_width="410dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/red_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_sale"
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/tv_price"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvsummation"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgrquantity_item"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvquantity"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toLeftOf="@id/tvsummation"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/green"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvsubtraction"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toLeftOf="@id/tvquantity"
+                    android:background="@drawable/bgrquantity_item"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lvtypeitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Trọng lượng: 1kg\nXuất xứ: Thái Lan\n- Smart Heart Gold Puppy là thức ăn khô cho chó nhỏ với chất lượng được đảm bảo.\n- Với các chú chó nhỏ, bạn cần cung cấp cho chúng một chế độ dinh dưỡng đầy đủ các chất để đáp ứng nhu cầu duy trì và phục hồi các mô cơ trong cơ thể của chúng\n.- Là đồ ăn cho chó  có chất lượng tốt, chứa dầu cá, DHA, Axit béo O-mega 3, giàu Colin...giúp phát triển trí não và tăng cường sức khỏe cho tim mạch." />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_type_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_type_title_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/tv_type_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
     <RelativeLayout
         android:id="@+id/rladdtocart"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true">
 
         <TextView
             android:id="@+id/tv_add_to_cart"

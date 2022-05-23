@@ -49,12 +49,9 @@ public class ItemList extends AppCompatActivity {
         accessories_item= new ArrayList<>();
         health_item=new ArrayList<>();
         shower_gel_item=new ArrayList<>();
-        imgback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1=new Intent(ItemList.this,MainActivity.class);
-                startActivity(intent1);
-            }
+        imgback.setOnClickListener(view -> {
+            Intent intent1=new Intent(ItemList.this,MainActivity.class);
+            startActivity(intent1);
         });
 
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,2);
@@ -78,25 +75,21 @@ public class ItemList extends AppCompatActivity {
                     case 1:
                         adapter = new ItemSearchAdapter(food_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
+                        rc_list_item.setLayoutManager(layoutManager);
+                        break;
+                    case 2:
+                        adapter = new ItemSearchAdapter(health_item,ItemList.this);
+                        rc_list_item.setAdapter(adapter);
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     case 3:
-                        adapter = new ItemSearchAdapter(health_item,ItemList.this);
+                        adapter = new ItemSearchAdapter(accessories_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     case 4:
-                        adapter = new ItemSearchAdapter(accessories_item,ItemList.this);
-                        rc_list_item.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
-                        rc_list_item.setLayoutManager(layoutManager);
-                        break;
-                    case 5:
                         adapter = new ItemSearchAdapter(shower_gel_item,ItemList.this);
                         rc_list_item.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
                         rc_list_item.setLayoutManager(layoutManager);
                         break;
                     default:

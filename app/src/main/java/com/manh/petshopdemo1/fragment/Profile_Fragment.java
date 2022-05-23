@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,8 +19,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.manh.petshopdemo1.Login;
 import com.manh.petshopdemo1.R;
+import com.manh.petshopdemo1.ResetPassword;
 import com.manh.petshopdemo1.SignUp;
 import com.manh.petshopdemo1.UpdateAccount;
+import com.manh.petshopdemo1.YOrder;
 import com.squareup.picasso.Picasso;
 
 public class Profile_Fragment extends Fragment {
@@ -62,6 +65,7 @@ public class Profile_Fragment extends Fragment {
             btnsignup.setVisibility(View.VISIBLE);
             btnlogout.setVisibility(View.GONE);
         } else {
+            btnlogout.setVisibility(View.VISIBLE);
             btnlogin.setVisibility(View.GONE);
             btnsignup.setVisibility(View.GONE);
             String username = user.getDisplayName();
@@ -81,71 +85,52 @@ public class Profile_Fragment extends Fragment {
     }
 
     private void initListener() {
-        btnlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
+        btnlogout.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getActivity(), Login.class);
+            startActivity(intent);
+        });
+        btnlogin.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), Login.class);
+            startActivity(intent);
+        });
+        btnsignup.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), SignUp.class);
+            startActivity(intent);
+        });
+        rlmyprofile.setOnClickListener(view -> {
+            if (user == null) {
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(getActivity(), UpdateAccount.class);
+                startActivity(intent);
+            }
+        });
+        rloder.setOnClickListener(view -> {
+            if (user != null) {
+                Intent intent = new Intent(getActivity(), YOrder.class);
+                startActivity(intent);
+            } else {
                 Intent intent = new Intent(getActivity(), Login.class);
                 startActivity(intent);
             }
         });
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        rlchangepass.setOnClickListener(view -> {
+            if (user != null) {
+                Intent intent = new Intent(getActivity(), ResetPassword.class);
+                startActivity(intent);
+            } else {
                 Intent intent = new Intent(getActivity(), Login.class);
                 startActivity(intent);
             }
         });
-        btnsignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SignUp.class);
+        rlfavorite.setOnClickListener(view -> {
+            if (user != null) {
+                Toast.makeText(getActivity(),"Feature under development",Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(getActivity(), Login.class);
                 startActivity(intent);
-            }
-        });
-        rlmyprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (user == null) {
-                    Intent intent = new Intent(getActivity(), Login.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(getActivity(), UpdateAccount.class);
-                    startActivity(intent);
-                }
-            }
-        });
-        rloder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (user != null) {
-                    return;
-                } else {
-                    Intent intent = new Intent(getActivity(), Login.class);
-                    startActivity(intent);
-                }
-            }
-        });
-        rlchangepass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (user != null) {
-
-                } else {
-                    Intent intent = new Intent(getActivity(), Login.class);
-                    startActivity(intent);
-                }
-            }
-        });
-        rlfavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (user != null) {
-
-                } else {
-                    Intent intent = new Intent(getActivity(), Login.class);
-                    startActivity(intent);
-                }
             }
         });
     }

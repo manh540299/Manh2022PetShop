@@ -32,24 +32,14 @@ public class ResetPassword extends AppCompatActivity {
 
 
     private void initUI() {
-        imgback=findViewById(R.id.imgback);
+        imgback=findViewById(R.id.rs_imgback);
         edtemail=findViewById(R.id.edtemail);
         btnrspass=findViewById(R.id.btnrspass);
         dialog=new ProgressDialog(this);
     }
     private void initListener() {
-        btnrspass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickResetPass();
-            }
-        });
-        imgback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        btnrspass.setOnClickListener(view -> onClickResetPass());
+        imgback.setOnClickListener(view -> finish());
     }
 
     private void onClickResetPass() {
@@ -60,16 +50,13 @@ public class ResetPassword extends AppCompatActivity {
             Toast.makeText(ResetPassword.this,"Please enter your password",Toast.LENGTH_LONG).show();
         }else {
             auth.sendPasswordResetEmail(emailAddress)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            dialog.dismiss();
-                            if (task.isSuccessful()) {
-                                Toast.makeText(ResetPassword.this, "Please check your email to change your password", Toast.LENGTH_LONG).show();
-                                finish();
-                            } else
-                                Toast.makeText(ResetPassword.this, "email incorrect", Toast.LENGTH_LONG).show();
-                        }
+                    .addOnCompleteListener(task -> {
+                        dialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ResetPassword.this, "Please check your email to change your password", Toast.LENGTH_LONG).show();
+                            finish();
+                        } else
+                            Toast.makeText(ResetPassword.this, "email incorrect", Toast.LENGTH_LONG).show();
                     });
         }
     }

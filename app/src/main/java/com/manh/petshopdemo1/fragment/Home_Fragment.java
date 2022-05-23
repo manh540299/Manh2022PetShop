@@ -149,7 +149,6 @@ public class Home_Fragment extends Fragment {
     private void setProductHomAdapter() {
         SaleAdapter = new ProductHomAdapter(itemSales, getActivity());
         binding.lvFoodItem.setAdapter(SaleAdapter);
-        SaleAdapter.notifyDataSetChanged();
         binding.lvFoodItem.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
 
     }

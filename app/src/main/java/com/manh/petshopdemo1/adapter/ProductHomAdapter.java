@@ -48,16 +48,13 @@ public class ProductHomAdapter extends RecyclerView.Adapter<ProductHomAdapter.vi
         holder.tvSale.setText(sale);
         holder.tvname.setText(name.toString());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, DetailProduct.class);
-                intent.putExtra("name", itemSales.get(position).getName());
-                intent.putExtra("image", itemSales.get(position).getImage());
-                intent.putExtra("price", sale);
-                intent.putExtra("sale",price);
-                context.startActivity(intent);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DetailProduct.class);
+            intent.putExtra("name", itemSales.get(position).getName());
+            intent.putExtra("image", itemSales.get(position).getImage());
+            intent.putExtra("price", sale);
+            intent.putExtra("sale",price);
+            context.startActivity(intent);
         });
 
     }

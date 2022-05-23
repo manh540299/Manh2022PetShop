@@ -6,20 +6,72 @@
     <string name="bot_nav_notification">notification</string>
     <string name="bot_nav_profile">profile</string>
 
-    <string name="home">Home</string>
-    <string name="home_hint_search">What do you need ?</string>
-    <string name="home_title_Sale">Sale</string>
-    <string name="home_title_menu">Anythings Yours Pet Need</string>
-    <string name="home_viewall_sale">viewall</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="Login_title_activity">Sign In</string>
-    <string name="Login_email_hint">Enter Email</string>
-    <string name="Login_sign_up">Sign Up</string>
-    <string name="Login_forgot_pass">   Forgot password   </string>
+    <!--Activity Login-->
+    <string name="login_edt_email">Enter Gmail</string>
+    <string name="login_edt_phone">Enter Phone Number</string>
+    <string name="login_btn_sign_in">Sign In</string>
+    <string name="login_tv_sign_up">Sign Up</string>
+    <string name="login_tv_forgot_pass">Forgot Password</string>
+    <string name="login_tv_go_home">I Want To See More</string>
 
-    <string name="profile_sign_up">Sign Up</string>
-    <string name="profile_sign_in">Sign In</string>
+    <!--Activity Order Detail-->
+    <string name="order_detail_tv_title">Order Detail</string>
+    <string name="order_detail_tv_delivery_Address">Delivery Address</string>
+    <string name="order_detail_tv_total_title">Order Total</string>
 
+    <!--Profile Fragment-->
+    <string name="profiler_fragment_btn_sign_in">Sign In</string>
+    <string name="profiler_fragment_btn_sign_up">Sign Up</string>
+    <string name="profiler_fragment_tv_purchases_history">Purchases History</string>
+    <string name="profiler_fragment_tv_favorite">Favorite</string>
+    <string name="profiler_fragment_tv_account_title">Account</string>
+    <string name="profiler_fragment_tv_change_profile">Your Profile</string>
+    <string name="profiler_fragment_tv_change_pass">Change Password</string>
+    <string name="profiler_fragment_btn_log_out">Log Out</string>
+    <!--Activity Reset Password-->
+    <string name="reset_pass_edt_enter_email">Enter Gmail</string>
+    <string name="reset_pass_btn_reset_pass">Reset Password</string>
+
+    <!--Activity Infomation-->
+    <string name="info_name">Enter your name</string>
+    <string name="info_phone">Enter phone number</string>
+    <string name="info_address">Enter address</string>
+    <string name="info_btn_confirm">Confirm</string>
+
+    <!--Activity Sign Up-->
+    <string name="sign_up_title">Sign Up</string>
+    <string name="sign_up_edt_gmail">Enter Gmail</string>
+    <string name="sign_up_edt_pass">Enter password</string>
+    <string name="sign_up_edt_confirm_pass">Confirm password</string>
+    <string name="sign_up_btn_sign_up">Sign Up</string>
+
+    <!--Activity Update Account-->
+    <string name="update_account_title">Your Profile</string>
+    <string name="update_account_email">Gmail</string>
+    <string name="update_account_username">username</string>
+    <string name="update_account_btn_update">Update</string>
+
+    <!--Activity Yorder-->
+    <string name="yorder_title">Purchases</string>
+
+    <!--Cart Fragment-->
+    <string name="cart_fragment_title">Cart</string>
+    <string name="cart_fragment_isempty">Giỏ Hàng Đang Trống</string>
+    <string name="cart_fragment_amount">Amount : </string>
+    <string name="cart_fragment_payment">Payment</string>
+
+    <!--Home Fragment-->
+    <string name="home_fragment_title">Home</string>
+    <string name="home_fragment_search">What do you need ?</string>
+    <string name="home_title_Sale">Sale</string>
+    <string name="home_title_menu">Anythings Yours Pet Need</string>
+    <string name="home_viewall_sale">viewall</string>
+
+    <!--Messenge Fragment-->
+    <string name="messenge_fragment_edt_enter_mess">Enter messenge</string>
+    <string name="messenge_fragment_btn_send">Send</string>
 </resources>

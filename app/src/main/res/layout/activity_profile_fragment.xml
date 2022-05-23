@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FAF9F9"
         android:orientation="vertical">
 
@@ -52,7 +54,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/bgr_btn_signup_profile"
                 android:gravity="center"
-                android:text="@string/profile_sign_up"
+                android:text="@string/profiler_fragment_btn_sign_up"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -66,7 +68,7 @@
                 android:layout_toStartOf="@id/btnsignup"
                 android:background="@color/white"
                 android:gravity="center"
-                android:text="@string/profile_sign_in"
+                android:text="@string/profiler_fragment_btn_sign_in"
                 android:textColor="@color/green"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -97,8 +99,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/imgyo"
                     android:gravity="center_vertical"
-                    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-                    android:text="Your Order" />
+                    android:text="@string/profiler_fragment_tv_purchases_history" />
 
             </RelativeLayout>
 
@@ -123,8 +124,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/icfavorite"
                     android:gravity="center_vertical"
-                    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-                    android:text="Your Favorite" />
+                    android:text="@string/profiler_fragment_tv_favorite" />
 
             </RelativeLayout>
 
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Account"
+                android:text="@string/profiler_fragment_tv_account_title"
                 android:textSize="16sp" />
 
             <RelativeLayout
@@ -157,7 +157,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/icmyprofile"
                     android:gravity="center_vertical"
-                    android:text="Your Profile" />
+                    android:text="@string/profiler_fragment_tv_change_profile" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rlchangepass"
@@ -181,7 +181,7 @@
                     android:layout_toEndOf="@+id/icchange"
                     android:gravity="center_vertical"
                     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-                    android:text="Change Password" />
+                    android:text="@string/profiler_fragment_tv_change_pass" />
             </RelativeLayout>
 
             <Button
@@ -189,9 +189,10 @@
                 android:layout_width="270dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 android:backgroundTint="@color/white"
-                android:text="Log Out"
+                android:text="@string/profiler_fragment_btn_log_out"
                 android:textColor="@color/red_color" />
         </LinearLayout>
     </LinearLayout>
+</ScrollView>

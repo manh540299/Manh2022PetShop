@@ -75,6 +75,8 @@ public class Login extends AppCompatActivity {
     }
 
     private void onClickLogin() {
+        Intent intent=getIntent();
+        boolean checkD=intent.getBooleanExtra("detailk",false);
         progressDialog.show();
         String email=edtEmail.getText().toString();
         String password=edtPass.getText().toString();
@@ -88,8 +90,13 @@ public class Login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             progressDialog.dismiss();
                             if (task.isSuccessful()) {
-                               Intent intent=new Intent(Login.this,MainActivity.class);
-                               startActivity(intent);
+                                if(!checkD) {
+                                    Intent intent = new Intent(Login.this, MainActivity.class);
+                                    startActivity(intent);
+                                }else {
+                                    finish();
+                                }
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(Login.this, "email or password incorrect",

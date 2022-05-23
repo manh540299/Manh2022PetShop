@@ -36,17 +36,17 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
-            android:hint="Enter your name" />
+            android:hint="@string/info_name" />
 
         <EditText
             android:id="@+id/edtphone"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/bgredtlogin"
-            android:hint="Enter phone number"
+            android:hint="@string/info_phone"
             android:imeOptions="actionDone"
             android:paddingLeft="20dp" />
 
@@ -61,7 +61,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
-            android:hint="Enter address" />
+            android:hint="@string/info_address" />
 
         <Button
             android:id="@+id/btnconfirm"
@@ -70,8 +70,8 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:backgroundTint="@color/green"
-            android:layout_marginTop="10dp"
-            android:text="Confirm"
+            android:layout_marginTop="18dp"
+            android:text="@string/info_btn_confirm"
             android:textStyle="bold"
             android:textColor="@color/white"/>
     </LinearLayout>

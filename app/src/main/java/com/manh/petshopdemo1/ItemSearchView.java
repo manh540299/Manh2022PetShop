@@ -50,20 +50,14 @@ public class ItemSearchView extends AppCompatActivity {
     }
 
     private void initListener() {
-        imgback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1=new Intent(ItemSearchView.this,MainActivity.class);
-                startActivity(intent1);
-            }
+        imgback.setOnClickListener(view -> {
+            Intent intent1=new Intent(ItemSearchView.this,MainActivity.class);
+            startActivity(intent1);
         });
-        tvsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ItemSearchView.this,SearchViewActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        tvsearch.setOnClickListener(view -> {
+            Intent intent=new Intent(ItemSearchView.this,SearchViewActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

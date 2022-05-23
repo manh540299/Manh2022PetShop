@@ -54,9 +54,14 @@ public class SearchViewActivity extends AppCompatActivity {
             count++;
             cursor.moveToNext();
         }
-        list_search_adapter = new ArrayAdapter<String>(this, R.layout.lv_search, search_history);
+        String[] search_his=new String[search_history.length];
+        int countz=0;
+        for(int i=search_history.length-1;i>=0;i--){
+            search_his[countz]=search_history[i];
+            countz++;
+        }
+        list_search_adapter = new ArrayAdapter<>(this, R.layout.lv_search, search_his);
         lv_search_history.setAdapter(list_search_adapter);
-       // list_search_adapter.notifyDataSetChanged();
     }
 
     private void deleteData() {
@@ -79,25 +84,14 @@ public class SearchViewActivity extends AppCompatActivity {
 
 
     private void onClick() {
-        tvsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickSearch();
-            }
+        tvsearch.setOnClickListener(view -> onClickSearch());
+        lv_search_history.setOnItemClickListener((adapterView, view, i, l) -> {
+            String key = list_search_adapter.getItem(i);
+            edtsearch.setText(key);
         });
-        lv_search_history.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String key = list_search_adapter.getItem(i);
-                edtsearch.setText(key);
-            }
-        });
-        delete_his.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                helper.queryData("DELETE FROM search");
-                getData();
-            }
+        delete_his.setOnClickListener(view -> {
+            helper.queryData("DELETE FROM search");
+            getData();
         });
     }
 

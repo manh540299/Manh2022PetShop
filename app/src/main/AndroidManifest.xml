@@ -14,6 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetShopDemo1">
         <activity
+            android:name=".YOrder"
+            android:exported="false"/>
+
+        <activity
+            android:name=".OrderDetails"
+            android:exported="false" />
+        <activity
             android:name=".ActivityInfomation"
             android:exported="false" />
         <activity
@@ -24,13 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".Flash"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".SignUp"
             android:exported="false" />
@@ -51,7 +52,13 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

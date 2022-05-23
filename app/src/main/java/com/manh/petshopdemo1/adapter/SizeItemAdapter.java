@@ -49,22 +49,19 @@ public class SizeItemAdapter extends RecyclerView.Adapter<SizeItemAdapter.ViewHo
         } else {
             holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.greenn1));
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               onClickItemListener.onClickItem(typeItemList.get(position));
-                if(position!=0)
-                    pos=1;
-                if (select.isEmpty()) {
-                    select.add(position);
+        holder.itemView.setOnClickListener(view -> {
+           onClickItemListener.onClickItem(typeItemList.get(position));
+            if(position!=0)
+                pos=1;
+            if (select.isEmpty()) {
+                select.add(position);
 
-                } else {
-                    select.clear();
-                    select.add(position);
-                    notifyDataSetChanged();
-                }
-
+            } else {
+                select.clear();
+                select.add(position);
+                notifyDataSetChanged();
             }
+
         });
     }
 

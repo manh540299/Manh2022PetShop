@@ -9,33 +9,37 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="60dp"
-                android:background="@color/green"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@color/green"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:text="cart"
+                android:gravity="center"
+                android:text="@string/cart_fragment_title"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:background="@color/smoke_color"
-            android:id="@+id/lvproduct_cart"
-            android:layout_above="@id/rcamount"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lvproduct_cart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/rcamount"
+                android:background="@color/smoke_color" />
+            <TextView
+                android:id="@+id/tvcartisempty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cart_fragment_isempty"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_centerInParent="true"
+                android:layout_above="@id/rcamount"
+                />
 
             <RelativeLayout
                 android:id="@+id/rcamount"
@@ -48,9 +52,9 @@
                     android:id="@+id/tvamounttitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:text="Amount : "
+                    android:text="@string/cart_fragment_amount"
                     android:textColor="#D52020"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -59,9 +63,9 @@
                     android:id="@+id/tvamount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:textColor="#D52020"
                     android:textSize="16sp"
                     android:textStyle="bold" />

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="180dp"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imgproduct"
+        android:layout_width="93dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border"
+        android:padding="2dp" />
+
+    <TextView
+        android:id="@+id/tv_purchases_name_product"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_toEndOf="@+id/imgproduct"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_purchases_size"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_purchases_name_product"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/imgproduct"
+        android:paddingStart="5dp"/>
+
+    <TextView
+        android:id="@+id/tvpurchases_quantity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tv_purchases_name_product"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvpurchases_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvpurchases_quantity"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/tvpurchases_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvpurchases_more"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/red_color"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvpurchases_total_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvpurchases_more"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@id/tvpurchases_total"
+        android:gravity="center"
+        android:text="Order Total : "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvpurchases_more"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/imgproduct"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/tvpurchases_total"
+        android:gravity="center"
+        android:text="show more details"
+        android:textColor="#818080"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/tvpurchases_quantity_all_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvpurchases_more"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:layout_marginStart="25dp"
+        android:textColor="#818080"
+        android:textSize="16sp"/>
+
+</RelativeLayout>

@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <ImageView
-        android:layout_toRightOf="@id/cbselcet"
+        android:layout_toEndOf="@id/cbselcet"
         android:id="@+id/imgproduct"
         android:layout_width="100dp"
         android:layout_height="140dp"
@@ -41,7 +41,7 @@
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/imgproduct"
+        android:layout_toEndOf="@+id/imgproduct"
         android:ellipsize="end"
         android:maxLines="1"
         android:paddingLeft="5dp"
@@ -54,16 +54,16 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_below="@id/tv_cart_item_name"
-        android:layout_toRightOf="@id/imgproduct"
-        android:paddingLeft="5dp"
+        android:layout_toEndOf="@id/imgproduct"
+        android:paddingStart="5dp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/imgproduct"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/imgproduct"
         android:orientation="horizontal">
 
         <TextView
@@ -107,7 +107,7 @@
         android:layout_height="40dp"
         android:layout_marginBottom="10dp"
         android:layout_above="@id/tvtotal"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:gravity="center" />
 
@@ -115,7 +115,7 @@
         android:id="@+id/tvtotal"
         android:layout_width="140dp"
         android:layout_height="40dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:gravity="center" />

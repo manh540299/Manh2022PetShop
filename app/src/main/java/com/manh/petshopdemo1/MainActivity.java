@@ -8,14 +8,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.manh.petshopdemo1.databinding.ActivityMainBinding;
 import com.manh.petshopdemo1.fragment.Cart_Fagment;
 import com.manh.petshopdemo1.fragment.Home_Fragment;
 import com.manh.petshopdemo1.fragment.Messenge_Fagment;
-import com.manh.petshopdemo1.fragment.Notification_Fragment;
 import com.manh.petshopdemo1.fragment.Profile_Fragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -88,9 +88,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openCartFragment() {
-        if (CurrentFragment != CartFragment) {
-            replaceFragment(new Cart_Fagment());
-            CurrentFragment=CartFragment;
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            Intent intent=new Intent(MainActivity.this,Login.class);
+            startActivity(intent);
+        }else {
+            if (CurrentFragment != CartFragment) {
+                replaceFragment(new Cart_Fagment());
+                CurrentFragment = CartFragment;
+            }
         }
     }
 

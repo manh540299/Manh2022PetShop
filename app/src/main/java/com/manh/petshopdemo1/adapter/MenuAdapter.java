@@ -39,14 +39,11 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.viewholder> {
     public void onBindViewHolder(viewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.text.setText(menuList.get(position).getTetx());
         holder.img.setImageResource(menuList.get(position).getImage());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(context, ItemList.class);
-                intent.putExtra("itemview",menuList.get(position).getTetx());
-                intent.putExtra("key",menuList.get(position).getId());
-                context.startActivity(intent);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent=new Intent(context, ItemList.class);
+            intent.putExtra("itemview",menuList.get(position).getTetx());
+            intent.putExtra("key",menuList.get(position).getId());
+            context.startActivity(intent);
         });
     }
 
