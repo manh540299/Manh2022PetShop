@@ -93,4 +93,13 @@ public class ItemSearchView extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(adapter!=null){
+            adapter.release();
+            adapter=null;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package com.manh.petshopdemo1;
+package com.manh.petshopdemo1.model;
 
 public class Messenge {
     private String messenge;

@@ -59,12 +59,9 @@ public class Home_Fragment extends Fragment {
     }
 
     private void initListener() {
-        binding.tvsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SearchViewActivity.class);
-                startActivity(intent);
-            }
+        binding.tvsearch.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), SearchViewActivity.class);
+            startActivity(intent);
         });
 
     }
@@ -150,18 +147,6 @@ public class Home_Fragment extends Fragment {
         SaleAdapter = new ProductHomAdapter(itemSales, getActivity());
         binding.lvFoodItem.setAdapter(SaleAdapter);
         binding.lvFoodItem.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
-
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (adapter != null) {
-            adapter.release();
-        }
-        if (SaleAdapter != null) {
-            SaleAdapter.release();
-        }
 
     }
 }

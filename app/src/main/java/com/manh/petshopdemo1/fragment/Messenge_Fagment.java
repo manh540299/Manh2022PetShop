@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.manh.petshopdemo1.Messenge;
+import com.manh.petshopdemo1.model.Messenge;
 import com.manh.petshopdemo1.R;
 import com.manh.petshopdemo1.adapter.MessengerAdapter;
 import com.manh.petshopdemo1.databinding.FragmentMessengeBinding;

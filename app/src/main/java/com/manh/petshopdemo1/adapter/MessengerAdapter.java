@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.manh.petshopdemo1.Messenge;
+import com.manh.petshopdemo1.model.Messenge;
 import com.manh.petshopdemo1.R;
 
 import java.util.List;

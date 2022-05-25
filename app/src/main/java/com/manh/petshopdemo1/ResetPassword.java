@@ -1,18 +1,12 @@
 package com.manh.petshopdemo1;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPassword extends AppCompatActivity {
@@ -47,7 +41,8 @@ public class ResetPassword extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String emailAddress = edtemail.getText().toString();
         if(emailAddress.isEmpty()){
-            Toast.makeText(ResetPassword.this,"Please enter your password",Toast.LENGTH_LONG).show();
+            Toast.makeText(ResetPassword.this,"Please enter your gmail",Toast.LENGTH_LONG).show();
+            dialog.dismiss();
         }else {
             auth.sendPasswordResetEmail(emailAddress)
                     .addOnCompleteListener(task -> {

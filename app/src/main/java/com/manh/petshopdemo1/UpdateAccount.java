@@ -80,24 +80,11 @@ public class UpdateAccount extends AppCompatActivity {
     }
 
     private void initListener() {
-        imgavatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickRequestPermission();
-            }
-        });
-        imgback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-        btnupdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.show();
-                onClickUpdateProfile();
-            }
+        imgavatar.setOnClickListener(view -> onClickRequestPermission());
+        imgback.setOnClickListener(view -> finish());
+        btnupdate.setOnClickListener(view -> {
+            dialog.show();
+            onClickUpdateProfile();
         });
     }
 
@@ -124,17 +111,18 @@ public class UpdateAccount extends AppCompatActivity {
                         .build();
             }
             user.updateProfile(profileUpdates)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                dialog.dismiss();
-                                Toast.makeText(UpdateAccount.this, "update profile success", Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(UpdateAccount.this,MainActivity.class);
-                                intent.putExtra("updateprofile",true);
-                                startActivity(intent);
-                                finishAffinity();
-                            }
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            dialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "update profile success", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(UpdateAccount.this,MainActivity.class);
+                            intent.putExtra("updateprofile",true);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"update faild",Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
                         }
                     });
 

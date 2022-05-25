@@ -58,6 +58,9 @@ public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.Vi
             }
         });
     }
+    public void release(){
+        context=null;
+    }
 
     @Override
     public int getItemCount() {

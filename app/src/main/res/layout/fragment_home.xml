@@ -7,7 +7,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/smoke_color"
+            android:background="#F6F5F5"
             android:orientation="vertical">
 
             <LinearLayout
@@ -90,7 +90,8 @@
                         android:paddingStart="15dp"
                         android:paddingEnd="1dp"
                         android:text="@string/home_title_Sale"
-                        android:textSize="20sp"
+                        android:paddingBottom="7dp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 

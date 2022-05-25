@@ -60,7 +60,7 @@ public class SearchViewActivity extends AppCompatActivity {
             search_his[countz]=search_history[i];
             countz++;
         }
-        list_search_adapter = new ArrayAdapter<>(this, R.layout.lv_search, search_his);
+        list_search_adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.lv_search, search_his);
         lv_search_history.setAdapter(list_search_adapter);
     }
 
@@ -97,7 +97,7 @@ public class SearchViewActivity extends AppCompatActivity {
 
     private void onClickSearch() {
         boolean check = false;
-        String search = edtsearch.getText().toString();
+        String search = edtsearch.getText().toString().trim();
         for (int i = 0; i < search_history.length; i++) {
             if (search.equalsIgnoreCase(search_history[i])) {
                 check = true;

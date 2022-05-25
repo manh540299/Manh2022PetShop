@@ -5,11 +5,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.manh.petshopdemo1.databinding.ActivityMainBinding;
@@ -22,11 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FragmentTransaction fragmentTransaction;
     private int CurrentFragment = 0;
-    private final int HomeFragment = 1;
-    private final int CartFragment = 2;
-    private final int MessengeFragment = 3;
     private final int NotificationFragment = 4;
-    private final int ProfileFragment = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,32 +41,30 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void setOnBottomNavigation() {
 
 
-        binding.botnav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.home:
-                        openHomeFragment();
-                        break;
-                    case R.id.cart:
-                        openCartFragment();
-                        break;
-                    case R.id.profile:
-                        openProfileFragment();
-                        break;
+        binding.botnav.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.home:
+                    openHomeFragment();
+                    break;
+                case R.id.cart:
+                    openCartFragment();
+                    break;
+                case R.id.profile:
+                    openProfileFragment();
+                    break;
 //                    case R.id.notification:
 //                        openNotificationFragment();
 //                        break;
-                    case R.id.message:
+                case R.id.message:
 
-                        openMessengeFragment();
-                        break;
-                }
-                return true;
+                    openMessengeFragment();
+                    break;
             }
+            return true;
         });
     }
 
@@ -81,9 +75,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openHomeFragment() {
-        if (CurrentFragment != HomeFragment) {
+        int homeFragment = 1;
+        if (CurrentFragment != homeFragment) {
             replaceFragment(new Home_Fragment());
-            CurrentFragment=HomeFragment;
+            CurrentFragment= homeFragment;
         }
     }
 
@@ -93,17 +88,25 @@ public class MainActivity extends AppCompatActivity {
             Intent intent=new Intent(MainActivity.this,Login.class);
             startActivity(intent);
         }else {
-            if (CurrentFragment != CartFragment) {
+            int cartFragment = 2;
+            if (CurrentFragment != cartFragment) {
                 replaceFragment(new Cart_Fagment());
-                CurrentFragment = CartFragment;
+                CurrentFragment = cartFragment;
             }
         }
     }
 
     public void openMessengeFragment() {
-        if (CurrentFragment != MessengeFragment) {
-            replaceFragment(new Messenge_Fagment());
-            CurrentFragment=MessengeFragment;
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+        } else {
+            int messengeFragment = 3;
+            if (CurrentFragment != messengeFragment) {
+                replaceFragment(new Messenge_Fagment());
+                CurrentFragment = messengeFragment;
+            }
         }
     }
 
@@ -115,9 +118,10 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void openProfileFragment() {
-        if (CurrentFragment != ProfileFragment) {
+        int profileFragment = 5;
+        if (CurrentFragment != profileFragment) {
             replaceFragment(new Profile_Fragment());
-            CurrentFragment=ProfileFragment;
+            CurrentFragment= profileFragment;
         }
     }
     private void openProfile(){
@@ -141,5 +145,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding=null;
 
+    }
 }

@@ -30,6 +30,7 @@ import com.manh.petshopdemo1.model.Cart;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Cart_Fagment extends Fragment {
     private FragmentCartBinding binding;
@@ -132,8 +133,21 @@ public class Cart_Fagment extends Fragment {
 
                 binding.lvproductCart.setAdapter(adapter);
                 binding.lvproductCart.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
-                RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
+                RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL);
                 binding.lvproductCart.addItemDecoration(itemDecoration);
             }
         }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        helper=null;
+        binding=null;
+        if(adapter!=null) {
+            adapter.release();
+            adapter = null;
+        }
+        cartList=null;
+
+    }
 }

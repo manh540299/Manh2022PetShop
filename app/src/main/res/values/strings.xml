@@ -12,8 +12,8 @@
 
     <!--Activity Login-->
     <string name="login_edt_email">Enter Gmail</string>
-    <string name="login_edt_phone">Enter Phone Number</string>
-    <string name="login_btn_sign_in">Sign In</string>
+    <string name="login_edt_phone">Enter Password</string>
+    <string name="login_btn_sign_in">Login</string>
     <string name="login_tv_sign_up">Sign Up</string>
     <string name="login_tv_forgot_pass">Forgot Password</string>
     <string name="login_tv_go_home">I Want To See More</string>

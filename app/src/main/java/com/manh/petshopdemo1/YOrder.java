@@ -106,5 +106,9 @@ public class YOrder extends AppCompatActivity {
         lvOrder.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        purchaseAdapter=null;
+    }
 }
